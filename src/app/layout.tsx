@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TechFree - Empowering Change through AI & Technology",
   description: "Empowering Change through AI & Technology",
+  icons: {
+    icon: "/assets/images/favico.png",
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`}
       >
         <ThemeProvider
           attribute="class"

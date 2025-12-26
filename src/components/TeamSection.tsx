@@ -34,13 +34,13 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-black transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Reveal width="100%" direction="up">
             <div className="flex flex-col items-center">
-              <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase text-sm">Meet Our Team</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
+              <span className="text-neutral-600 dark:text-neutral-400 font-semibold tracking-wider uppercase text-sm">Meet Our Team</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mt-3 mb-4">
                 We’ve Exclusive Team member Meet our Professionals
               </h2>
             </div>
@@ -67,20 +67,20 @@ export default function TeamSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex gap-4 justify-center mb-4">
-                      <a href="#" className="text-white hover:text-blue-400 transition-colors"><Facebook size={20} /></a>
-                      <a href="#" className="text-white hover:text-blue-400 transition-colors"><Twitter size={20} /></a>
-                      <a href="#" className="text-white hover:text-blue-400 transition-colors"><Instagram size={20} /></a>
-                      <a href="#" className="text-white hover:text-blue-400 transition-colors"><Youtube size={20} /></a>
+                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Facebook size={20} /></a>
+                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Twitter size={20} /></a>
+                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Instagram size={20} /></a>
+                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Youtube size={20} /></a>
                     </div>
                   </div>
                 </div>
               </div>
               
               <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-black dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-slate-500 dark:text-slate-400 font-medium">
+                <p className="text-neutral-500 dark:text-neutral-400 font-medium">
                   {member.role}
                 </p>
               </div>

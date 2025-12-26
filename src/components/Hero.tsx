@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-950 overflow-hidden pt-16 pb-20 lg:pt-32 lg:pb-28 transition-colors duration-300">
+    <section className="relative bg-neutral-50 dark:bg-black overflow-hidden pt-16 pb-20 lg:pt-32 lg:pb-28 transition-colors duration-300">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-40 dark:opacity-20">
         <motion.div 
@@ -19,7 +19,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "linear" 
           }}
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-400/30 dark:bg-blue-600/20 blur-3xl"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-neutral-400/30 dark:bg-neutral-600/20 blur-3xl"
         />
         <motion.div 
           animate={{ 
@@ -31,7 +31,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut" 
           }}
-          className="absolute top-1/2 -left-24 w-72 h-72 rounded-full bg-purple-400/30 dark:bg-purple-600/20 blur-3xl"
+          className="absolute top-1/2 -left-24 w-72 h-72 rounded-full bg-neutral-400/30 dark:bg-neutral-600/20 blur-3xl"
         />
       </div>
 
@@ -43,11 +43,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-medium text-sm border border-blue-100 dark:border-blue-800"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 dark:bg-neutral-800/30 text-black dark:text-white font-medium text-sm border border-neutral-200 dark:border-neutral-800"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black dark:bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-black dark:bg-white"></span>
               </span>
               Leading IT Solutions Provider
             </motion.div>
@@ -56,16 +56,16 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1]"
+              className="text-5xl lg:text-6xl font-bold tracking-tight text-black dark:text-white leading-[1.1]"
             >
-              Empowering Change through <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">AI & Technology</span>
+              Empowering Change through <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-600 to-black dark:from-neutral-400 dark:to-white">AI & Technology</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl"
+              className="text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed max-w-xl"
             >
               We deliver cutting-edge technology solutions that transform businesses. From AI integration to robust cybersecurity, we are your partner in digital evolution.
             </motion.p>
@@ -78,14 +78,14 @@ export default function Hero() {
             >
               <Link 
                 href="/contact-us" 
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white dark:text-black transition-all duration-200 bg-black dark:bg-white rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-200 hover:shadow-lg hover:-translate-y-1"
               >
                 Get Started Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link 
                 href="/about-company" 
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 transition-all duration-200 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-neutral-700 dark:text-neutral-200 transition-all duration-200 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-full hover:bg-neutral-50 dark:hover:bg-neutral-900 hover:border-neutral-300 dark:hover:border-neutral-700"
               >
                 Learn More
               </Link>
@@ -95,19 +95,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="pt-8 border-t border-slate-200 dark:border-slate-800 flex gap-8"
+              className="pt-8 border-t border-neutral-200 dark:border-neutral-800 flex gap-8"
             >
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span className="text-slate-600 dark:text-slate-400 font-medium">24/7 Support</span>
+                <CheckCircle className="w-5 h-5 text-black dark:text-white" />
+                <span className="text-neutral-600 dark:text-neutral-400 font-medium">24/7 Support</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span className="text-slate-600 dark:text-slate-400 font-medium">Expert Team</span>
+                <CheckCircle className="w-5 h-5 text-black dark:text-white" />
+                <span className="text-neutral-600 dark:text-neutral-400 font-medium">Expert Team</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-500" />
-                <span className="text-slate-600 dark:text-slate-400 font-medium">Global Reach</span>
+                <CheckCircle className="w-5 h-5 text-black dark:text-white" />
+                <span className="text-neutral-600 dark:text-neutral-400 font-medium">Global Reach</span>
               </div>
             </motion.div>
           </div>
@@ -119,7 +119,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 group">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800 group">
               <img 
                 src="/assets/images/slide/slider1lider1.jpg" 
                 alt="TechFree Team" 
@@ -130,15 +130,15 @@ export default function Hero() {
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-8 left-8 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs border border-white/50 dark:border-slate-700 hidden md:block"
+                className="absolute bottom-8 left-8 bg-white/90 dark:bg-black/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs border border-white/50 dark:border-neutral-700 hidden md:block"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xl">
+                  <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center text-black dark:text-white font-bold text-xl">
                     15+
                   </div>
                   <div>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Years of Experience</p>
-                    <p className="text-slate-900 dark:text-white font-bold">Delivering Excellence</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">Years of Experience</p>
+                    <p className="text-black dark:text-white font-bold">Delivering Excellence</p>
                   </div>
                 </div>
               </motion.div>

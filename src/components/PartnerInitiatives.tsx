@@ -27,16 +27,16 @@ const partners = [
 
 export default function PartnerInitiatives() {
   return (
-    <section className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+    <section className="py-20 bg-neutral-50 dark:bg-black transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Reveal width="100%" direction="up">
             <div className="flex flex-col items-center">
-              <span className="text-blue-600 dark:text-blue-400 font-semibold tracking-wider uppercase text-sm">Our Partners</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-3 mb-4">
+              <span className="text-neutral-600 dark:text-neutral-400 font-semibold tracking-wider uppercase text-sm">Our Partners</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mt-3 mb-4">
                 Collaborative Initiatives
               </h2>
-              <p className="text-slate-600 dark:text-slate-400 text-lg">
+              <p className="text-neutral-600 dark:text-neutral-400 text-lg">
                 Working together with our partners to create lasting impact and drive positive change in our communities.
               </p>
             </div>
@@ -51,22 +51,22 @@ export default function PartnerInitiatives() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: partner.delay }}
-              className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 group"
+              className="bg-white dark:bg-neutral-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-neutral-100 dark:border-neutral-800 group"
             >
-              <div className="relative w-20 h-20 mb-6 mx-auto bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <partner.icon size={40} className="text-blue-600 dark:text-blue-400" />
+              <div className="relative w-20 h-20 mb-6 mx-auto bg-neutral-50 dark:bg-neutral-800 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <partner.icon size={40} className="text-black dark:text-white" />
               </div>
               
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold text-black dark:text-white mb-4 text-center group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
                 {partner.name}
               </h3>
               
-              <p className="text-slate-600 dark:text-slate-300 text-center mb-6 leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-300 text-center mb-6 leading-relaxed">
                 {partner.description}
               </p>
               
               <div className="text-center">
-                <a href="#" className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                <a href="#" className="inline-flex items-center text-black dark:text-white font-medium hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors">
                   Read More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

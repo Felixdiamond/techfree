@@ -8,11 +8,11 @@ import Image from "next/image";
 
 export default function AboutCompany() {
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <PageHeader title="About Company" breadcrumb="About Us" />
 
       {/* Main Content */}
-      <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
+      <section className="py-20 bg-white dark:bg-black transition-colors duration-300">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             {/* Image Section */}
@@ -23,10 +23,14 @@ export default function AboutCompany() {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2 relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl group bg-gradient-to-br from-blue-600 to-indigo-700 h-[500px] flex items-center justify-center">
-                <Building2 size={120} className="text-white/10 absolute top-10 right-10" />
-                <Building2 size={200} className="text-white drop-shadow-2xl relative z-10" />
-                <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl group h-[500px]">
+                <Image 
+                  src="/assets/images/page/about-1.jpg" 
+                  alt="About TechFree" 
+                  fill 
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
               </div>
             </motion.div>
 
@@ -34,9 +38,9 @@ export default function AboutCompany() {
             <div className="lg:w-1/2 space-y-8">
               <Reveal>
                 <div>
-                  <span className="text-blue-600 font-semibold tracking-wider uppercase text-sm">About Company</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mt-3 leading-tight">
-                    Make your life easier with help from <span className="text-blue-600">TechFree</span>
+                  <span className="text-neutral-600 dark:text-neutral-400 font-semibold tracking-wider uppercase text-sm">About Company</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mt-3 leading-tight">
+                    Make your life easier with help from <span className="text-neutral-600 dark:text-neutral-400">TechFree</span>
                   </h2>
                 </div>
               </Reveal>
