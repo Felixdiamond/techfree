@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import { Shield, Cloud, Server, Code, Headphones, BarChart, CheckCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {

@@ -3,6 +3,7 @@
 import PageHeader from "@/components/PageHeader";
 import { Calendar, ArrowRight, User } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const blogPosts = [
   {
