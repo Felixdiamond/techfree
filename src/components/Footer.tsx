@@ -1,8 +1,46 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, ArrowRight, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail, ArrowRight, MapPin, Loader2, Check } from "lucide-react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setStatus("success");
+        setMessage(data.message);
+        setEmail("");
+        setTimeout(() => {
+            setStatus("idle");
+            setMessage("");
+        }, 3000);
+      } else {
+        setStatus("error");
+        setMessage(data.message);
+      }
+    } catch (error) {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <footer className="bg-neutral-50 dark:bg-black text-neutral-600 dark:text-neutral-400 pt-20 pb-10 overflow-hidden transition-colors duration-300">
       {/* Marquee Section - Simplified for modern look */}
@@ -90,18 +128,36 @@ export default function Footer() {
           <div>
             <h4 className="text-black dark:text-white font-bold text-xl mb-6 transition-colors duration-300">Newsletter</h4>
             <p className="text-neutral-600 dark:text-neutral-400 mb-6">Subscribe our newsletter to get more updates</p>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-500" size={18} />
                 <input 
                   type="email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email Address" 
-                  className="w-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white transition-all"
+                  disabled={status === "loading" || status === "success"}
+                  className="w-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white transition-all disabled:opacity-50"
                 />
               </div>
-              <button className="w-full bg-black dark:bg-white text-white dark:text-black font-semibold py-3 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-black/20 dark:shadow-white/20">
-                Sign Up <ArrowRight size={18} />
+              <button 
+                type="submit"
+                disabled={status === "loading" || status === "success"}
+                className="w-full bg-black dark:bg-white text-white dark:text-black font-semibold py-3 rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-black/20 dark:shadow-white/20 disabled:opacity-70"
+              >
+                {status === "loading" ? (
+                  <Loader2 size={18} className="animate-spin" />
+                ) : status === "success" ? (
+                  <>Subscribed <Check size={18} /></>
+                ) : (
+                  <>Sign Up <ArrowRight size={18} /></>
+                )}
               </button>
+              {message && (
+                <p className={`text-sm ${status === "error" ? "text-red-500" : "text-green-500"}`}>
+                  {message}
+                </p>
+              )}
             </form>
           </div>
         </div>

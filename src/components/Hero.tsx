@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -120,10 +121,13 @@ export default function Hero() {
             className="lg:w-1/2 relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800 group">
-              <img 
+              <Image 
                 src="/assets/images/slide/slider1lider1.jpg" 
                 alt="TechFree Team" 
+                width={800}
+                height={600}
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+                priority
               />
               
               {/* Floating Card */}

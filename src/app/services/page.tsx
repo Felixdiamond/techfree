@@ -93,12 +93,13 @@ export default function ServicesPage() {
               <div key={index} className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-800">
                 <div className="relative h-48 overflow-hidden">
                   <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors z-10"></div>
-                  <img 
+                  <Image 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-blue-600 uppercase tracking-wide">
+                  <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-black uppercase tracking-wide">
                     {service.category}
                   </div>
                 </div>

@@ -98,12 +98,13 @@ export default function BlogPage() {
                 className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700 group"
               >
                 <div className="relative h-60 overflow-hidden">
-                  <img 
+                  <Image 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide z-10">
                     {post.category}
                   </div>
                 </div>

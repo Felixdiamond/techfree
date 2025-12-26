@@ -25,7 +25,7 @@ export default function AboutCompany() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl group h-[500px]">
                 <Image 
-                  src="/assets/images/page/about-1.jpg" 
+                  src="/assets/images/page/about1.jpg" 
                   alt="About TechFree" 
                   fill 
                   className="object-cover"
