@@ -1,49 +1,56 @@
 import PageHeader from "@/components/PageHeader";
-import { Shield, Cloud, Server, Code, Headphones, BarChart, CheckCircle, ArrowRight } from "lucide-react";
+import { Monitor, Cpu, Database, Shield, Palette, Briefcase, CheckCircle, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
-    icon: Shield,
-    title: "Cyber Security",
-    description: "Protect your digital assets with our advanced security protocols and real-time monitoring systems.",
+    icon: Monitor,
+    title: "Digital Solutions",
+    description: "Website Development, Front-End Development, and Graphic Design tailored to your business needs.",
     image: "/assets/images/image-box/os-h31.jpg",
-    category: "Security"
+    category: "Development",
+    link: "/services/digital-solutions"
   },
   {
-    icon: Cloud,
-    title: "Cloud Computing",
-    description: "Scalable cloud solutions that enhance collaboration, flexibility, and data accessibility for your team.",
+    icon: Cpu,
+    title: "AI & Automation",
+    description: "AI-Powered Chatbots and Business Process Automation to optimize workflows and improve efficiency.",
     image: "/assets/images/image-box/os-h32.jpg",
-    category: "Infrastructure"
+    category: "AI",
+    link: "/services/ai-automation"
   },
   {
-    icon: Server,
-    title: "IT Management",
-    description: "Comprehensive IT infrastructure management to ensure your business operations run smoothly 24/7.",
+    icon: Database,
+    title: "Data & Analytics",
+    description: "Leverage data for actionable insights and seamless API Development & Integration.",
     image: "/assets/images/image-box/os-h33.jpg",
-    category: "Management"
+    category: "Data",
+    link: "/services/data-analytics"
   },
   {
-    icon: Code,
-    title: "Software Development",
-    description: "Custom software solutions tailored to your specific business needs and workflow requirements.",
-    image: "/assets/images/image-box/os-h31.jpg", // Reusing image for demo if unique one not found
-    category: "Development"
+    icon: Shield,
+    title: "Cybersecurity & Cloud",
+    description: "Robust security measures and scalable, secure cloud-based solutions for storage and operations.",
+    image: "/assets/images/image-box/os-h31.jpg",
+    category: "Security",
+    link: "/services/cybersecurity-cloud"
   },
   {
-    icon: Headphones,
-    title: "IT Support",
-    description: "Dedicated technical support team ready to resolve issues and minimize downtime for your business.",
+    icon: Palette,
+    title: "Creative & Marketing",
+    description: "Content Creation, Social Media Marketing, and Cinematography to amplify your brand's reach.",
     image: "/assets/images/image-box/os-h32.jpg",
-    category: "Support"
+    category: "Creative",
+    link: "/services/creative-marketing"
   },
   {
-    icon: BarChart,
-    title: "IT Consultancy",
-    description: "Strategic technology consulting to help you make informed decisions and drive digital transformation.",
+    icon: Briefcase,
+    title: "Project & Business Mgt",
+    description: "End-to-end Project Management and Business Process Management to improve efficiency.",
     image: "/assets/images/image-box/os-h33.jpg",
-    category: "Consulting"
+    category: "Management",
+    link: "/services/project-business-management"
   }
 ];
 
@@ -114,9 +121,9 @@ export default function ServicesPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
                     {service.description}
                   </p>
-                  <a href="#" className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 group-hover:translate-x-2 transition-transform duration-300">
+                  <Link href={service.link} className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 group-hover:translate-x-2 transition-transform duration-300">
                     Read More <ArrowRight size={16} className="ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

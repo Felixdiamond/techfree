@@ -1,51 +1,58 @@
 "use client";
 
-import { Shield, Cloud, Server, Code, Headphones, BarChart } from "lucide-react";
+import Link from "next/link";
+import { Monitor, Cpu, Database, Shield, Palette, Briefcase } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { motion } from "framer-motion";
 
 const services = [
   {
-    icon: Shield,
-    title: "Cyber Security",
-    description: "Protect your digital assets with our advanced security protocols and real-time monitoring systems.",
-    color: "text-red-500",
-    bg: "bg-red-50 dark:bg-red-900/20"
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Computing",
-    description: "Scalable cloud solutions that enhance collaboration, flexibility, and data accessibility for your team.",
+    icon: Monitor,
+    title: "Digital Solutions",
+    description: "Website Development, Front-End Development, and Graphic Design tailored to your business needs.",
     color: "text-blue-500",
-    bg: "bg-blue-50 dark:bg-blue-900/20"
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    link: "/services/digital-solutions"
   },
   {
-    icon: Server,
-    title: "IT Management",
-    description: "Comprehensive IT infrastructure management to ensure your business operations run smoothly 24/7.",
+    icon: Cpu,
+    title: "AI & Automation",
+    description: "AI-Powered Chatbots and Business Process Automation to optimize workflows and improve efficiency.",
     color: "text-purple-500",
-    bg: "bg-purple-50 dark:bg-purple-900/20"
+    bg: "bg-purple-50 dark:bg-purple-900/20",
+    link: "/services/ai-automation"
   },
   {
-    icon: Code,
-    title: "Software Development",
-    description: "Custom software solutions tailored to your specific business needs and workflow requirements.",
+    icon: Database,
+    title: "Data & Analytics",
+    description: "Leverage data for actionable insights and seamless API Development & Integration.",
     color: "text-indigo-500",
-    bg: "bg-indigo-50 dark:bg-indigo-900/20"
+    bg: "bg-indigo-50 dark:bg-indigo-900/20",
+    link: "/services/data-analytics"
   },
   {
-    icon: Headphones,
-    title: "IT Support",
-    description: "Dedicated technical support team ready to resolve issues and minimize downtime for your business.",
-    color: "text-green-500",
-    bg: "bg-green-50 dark:bg-green-900/20"
+    icon: Shield,
+    title: "Cybersecurity & Cloud",
+    description: "Robust security measures and scalable, secure cloud-based solutions for storage and operations.",
+    color: "text-red-500",
+    bg: "bg-red-50 dark:bg-red-900/20",
+    link: "/services/cybersecurity-cloud"
   },
   {
-    icon: BarChart,
-    title: "IT Consultancy",
-    description: "Strategic technology consulting to help you make informed decisions and drive digital transformation.",
+    icon: Palette,
+    title: "Creative & Marketing",
+    description: "Content Creation, Social Media Marketing, and Cinematography to amplify your brand's reach.",
     color: "text-orange-500",
-    bg: "bg-orange-50 dark:bg-orange-900/20"
+    bg: "bg-orange-50 dark:bg-orange-900/20",
+    link: "/services/creative-marketing"
+  },
+  {
+    icon: Briefcase,
+    title: "Project & Business Mgt",
+    description: "End-to-end Project Management and Business Process Management to improve efficiency.",
+    color: "text-green-500",
+    bg: "bg-green-50 dark:bg-green-900/20",
+    link: "/services/project-business-management"
   }
 ];
 
@@ -105,9 +112,9 @@ export default function Services() {
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                 {service.description}
               </p>
-              <a href="#" className="inline-flex items-center mt-6 text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300">
+              <Link href={service.link} className="inline-flex items-center mt-6 text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300">
                 Learn more <span className="ml-2 text-lg">→</span>
-              </a>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

@@ -7,28 +7,16 @@ import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "George C. Anderson",
-    role: "Senior Manager",
-    image: "/assets/images/team/teamh1.jpg",
+    name: "Emmanuel Adedeji Adeagbo",
+    phone: "+2349021230278",
+    email: "Emmanuel@thetechfree.com",
     delay: 0.1
   },
   {
-    name: "Brandon D. Garcia",
-    role: "IT Consultant",
-    image: "/assets/images/team/teamh11.jpg",
+    name: "Olajuwon Sultan Balogun",
+    phone: "+230 5476 6430",
+    email: "Olajuwon@thetechfree.com",
     delay: 0.2
-  },
-  {
-    name: "William A. Rogers",
-    role: "Product Designer",
-    image: "/assets/images/team/teamh12.jpg",
-    delay: 0.3
-  },
-  {
-    name: "Matthew R. Howard",
-    role: "IT Manager",
-    image: "/assets/images/team/teamh13.jpg",
-    delay: 0.4
   }
 ];
 
@@ -47,7 +35,7 @@ export default function TeamSection() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -55,34 +43,18 @@ export default function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: member.delay }}
-              className="group relative overflow-hidden rounded-2xl"
+              className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="relative h-[400px] w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="flex gap-4 justify-center mb-4">
-                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Facebook size={20} /></a>
-                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Twitter size={20} /></a>
-                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Instagram size={20} /></a>
-                      <a href="#" className="text-white hover:text-neutral-400 transition-colors"><Youtube size={20} /></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-4 text-center">
-                <h3 className="text-xl font-bold text-black dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-neutral-500 dark:text-neutral-400 font-medium">
-                  {member.role}
-                </p>
+              <h3 className="text-xl font-bold text-black dark:text-white mb-2">
+                {member.name}
+              </h3>
+              <div className="flex flex-col items-center gap-2 mt-4">
+                <a href={`tel:${member.phone.replace(/\\s/g, '')}`} className="text-neutral-600 dark:text-neutral-400 font-medium hover:underline flex items-center justify-center">
+                  {member.phone}
+                </a>
+                <a href={`mailto:${member.email}`} className="text-blue-600 dark:text-blue-400 font-medium hover:underline flex items-center justify-center">
+                  {member.email}
+                </a>
               </div>
             </motion.div>
           ))}

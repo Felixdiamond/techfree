@@ -6,51 +6,34 @@ import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-const categories = ["All", "Business", "Cyber Security", "Development", "Branding"];
+const categories = ["All", "Sustainability", "Education", "Rehabilitation"];
 
 const projects = [
   {
-    id: 1,
-    title: "Business Website Design",
-    category: "Business",
+    id: "techclean",
+    title: "TechClean",
+    category: "Sustainability",
     image: "/assets/images/project/pj-grid1.jpg",
-    number: "01"
+    number: "01",
+    link: "/projects/techclean"
   },
   {
-    id: 2,
-    title: "Cyber Security Audit",
-    category: "Cyber Security",
+    id: "techedu",
+    title: "TechEdu",
+    category: "Education",
     image: "/assets/images/project/pj-grid2.jpg",
-    number: "02"
+    number: "02",
+    link: "/projects/techedu"
   },
   {
-    id: 3,
-    title: "Mobile App Development",
-    category: "Development",
+    id: "the-incarcerated-minds",
+    title: "The Incarcerated Minds",
+    category: "Rehabilitation",
     image: "/assets/images/project/pj-grid3.jpg",
-    number: "03"
-  },
-  {
-    id: 4,
-    title: "Brand Identity Design",
-    category: "Branding",
-    image: "/assets/images/project/pj-grid4.jpg",
-    number: "04"
-  },
-  {
-    id: 5,
-    title: "Cloud Infrastructure",
-    category: "Business",
-    image: "/assets/images/project/pj-grid5.jpg",
-    number: "05"
-  },
-  {
-    id: 6,
-    title: "Data Protection System",
-    category: "Cyber Security",
-    image: "/assets/images/project/pj-grid6.jpg",
-    number: "06"
+    number: "03",
+    link: "/projects/the-incarcerated-minds"
   }
 ];
 
@@ -127,12 +110,12 @@ export default function ProjectsPage() {
                     <h3 className="text-2xl font-bold text-white mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                       {project.title}
                     </h3>
-                    <a 
-                      href="#" 
+                    <Link 
+                      href={project.link} 
                       className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white hover:bg-blue-500 transition-colors opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300"
                     >
                       <ArrowUpRight size={24} />
-                    </a>
+                    </Link>
                   </div>
                 </motion.div>
               ))}

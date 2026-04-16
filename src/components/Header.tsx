@@ -37,13 +37,20 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-             <div className="relative w-10 h-10">
+          <Link href="/" className="flex items-center group">
+             <div className="relative w-32 h-10 md:w-40 md:h-12 transition-transform group-hover:scale-105">
                 <Image 
-                  src="/assets/images/dark.png" 
+                  src="/assets/images/logo-dark.png" 
                   alt="TechFree Logo" 
                   fill 
-                  className="object-contain" 
+                  className="object-contain block dark:hidden" 
+                  priority
+                />
+                <Image 
+                  src="/assets/images/logo-light.png" 
+                  alt="TechFree Logo" 
+                  fill 
+                  className="object-contain hidden dark:block" 
                   priority
                 />
              </div>
